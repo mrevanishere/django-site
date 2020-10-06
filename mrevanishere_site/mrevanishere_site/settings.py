@@ -9,9 +9,10 @@ with open(file_path, "r") as f:
     SECRET_KEY = f.read().strip()
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+        'mrevanishere.com',]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -20,7 +21,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'ckeditor',
+    #'ckeditor',
+    #'ckeditor_uploader',
     'blog.apps.BlogConfig',
 ]
 
@@ -57,20 +59,15 @@ WSGI_APPLICATION = 'mrevanishere_site.wsgi.application'
 
 # Database
 
-base_path_db = os.path.dirname(__file__)
-file_path_db = os.path.abspath(os.path.join(base_path, "..", "..", "..", "dbky.txt"))
-with open(file_path_db, "r") as f:
-    DB_PASS = f.read().strip()
+# base_path_db = os.path.dirname(__file__)
+# file_path_db = os.path.abspath(os.path.join(base_path, "..", "..", "..", "dbky.txt"))
+# with open(file_path_db, "r") as f:
+    # DB_PASS = f.read().strip()
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'sample',
-        'HOST': '127.0.0.1',
-        'PORT': '3306',
-        'USER': 'root',
-        'PASSWORD': DB_PASS
-
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
@@ -94,7 +91,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Los_Angeles'
 
 USE_I18N = True
 
@@ -104,12 +101,12 @@ USE_TZ = True
 
 # Static and Media
 
+# CKEDITOR_UPLOAD_PATH = 'content/ckeditor'
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
+STATICFILES_DIRS = ( os.path.join(BASE_DIR, 'static'),)
