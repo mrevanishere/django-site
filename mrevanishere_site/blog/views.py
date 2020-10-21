@@ -18,3 +18,7 @@ def article(request, id):
     except BlogPost.DoesNotExist:
         raise Http404("Question does not exist")
     return render(request, 'blog/article.html', {'post': post})
+
+
+def contact(request):
+    return render(request, 'blog/contact.html')
