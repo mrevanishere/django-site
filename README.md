@@ -1,6 +1,6 @@
 # Django Site
 This is all of the code of my website [mrevanishere](https://mrevanishere.com).
-I'm not a JavaSciprt person (yet), so I'm keeping the site look simple but nice.
+I'm not a JavaScript person (yet), so I'm keeping the site look simple but nice.
 
 # Tabs/Features
 ## Articles
