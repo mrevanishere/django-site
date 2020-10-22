@@ -16,7 +16,7 @@
                 <img src="{% static 'blog/seiku.png' %}" alt="MrEvan Icon" class="me" height="64" width="64"/>
                 <h3>mrevanishere</h3>
                 <p>
-                    A statistics student.
+                    A statistics / comp sci / math student.
                     Interested in math, cs, language, gaming, reading, art, music
                 </p>
                 <div class="nav">
@@ -41,6 +41,13 @@
         <div class="col-md-1"></div>
         {% block content %}
         <div class="col-md-4">
+            <a class="post-link">
+                <h2>Currently nothing made!</h2>
+                <h6>10-21-20</h6>
+                <p>I'm busy with other stuff so I'll get around to this eventually.</p>
+            </a>
+
+
             {% for post in latest_posts %}
                 <a href="{% url 'blog:article' post.id %}" class="post-link">
                 <h2>{{ post.title }}</h2>

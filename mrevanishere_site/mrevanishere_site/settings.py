@@ -13,7 +13,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
         'mrevanishere.com',
-        ]
+]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
