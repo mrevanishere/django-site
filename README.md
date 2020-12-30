@@ -1,6 +1,17 @@
 # Django Site
-This is all of the code of my website [mrevanishere](https://mrevanishere.com).
-I'm not a JavaScript person (yet), so I'm keeping the site look simple but nice.
+This is some of the code from my website [mrevanishere](https://mrevanishere.com).
+
+## Motivation
+I wanted to build this to have a nice place to host my future projects and portfolio and to learn Django.
+
+## Tech
+Built with
+* Django
+* debian
+* apache
+* SQL
+* https
+
 
 # Tabs/Features
 ## Articles
