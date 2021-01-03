@@ -9,10 +9,10 @@ with open(file_path, "r") as f:
     SECRET_KEY = f.read().strip()
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
-        'mrevanishere.com',
+        'mrevanishere.com', 'localhost', '127.0.0.1',
 ]
 
 INSTALLED_APPS = [
@@ -22,8 +22,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #'ckeditor',
-    #'ckeditor_uploader',
+    'ckeditor',
+    'ckeditor_uploader',
     'blog.apps.BlogConfig',
 ]
 
@@ -102,7 +102,7 @@ USE_TZ = True
 
 # Static and Media
 
-# CKEDITOR_UPLOAD_PATH = 'content/ckeditor'
+CKEDITOR_UPLOAD_PATH = 'content/ckeditor'
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
