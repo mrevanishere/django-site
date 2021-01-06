@@ -14,6 +14,9 @@ Built with
 
 
 # Tabs/Features
+## Version 1.0
+![mrevanishere.com](image.png)
+
 ## Articles
 Home / Updates
 ## Portfolio
