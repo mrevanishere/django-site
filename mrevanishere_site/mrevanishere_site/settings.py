@@ -59,16 +59,20 @@ WSGI_APPLICATION = 'mrevanishere_site.wsgi.application'
 
 
 # Database
-
+# get name, user, password, host, port
 # base_path_db = os.path.dirname(__file__)
 # file_path_db = os.path.abspath(os.path.join(base_path, "..", "..", "..", "dbky.txt"))
 # with open(file_path_db, "r") as f:
-    # DB_PASS = f.read().strip()
+#     DB_PASS = f.read().strip()
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'postgre',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
