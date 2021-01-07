@@ -5,11 +5,12 @@ This is some of the code from my website [mrevanishere](https://mrevanishere.com
 I wanted to build this to have a nice place to host my future projects and portfolio and to learn Django.
 
 ## Tech
-Built with
+Built with LAPP stack (Linux, Apache, PostgreSQL, Python)
 * Django
 * debian
 * apache
-* SQL
+* PostgreSQL
+* SQLite
 * https
 
 
