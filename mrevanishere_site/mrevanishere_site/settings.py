@@ -1,19 +1,51 @@
 import os
+import platform
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 base_path = os.path.dirname(__file__)
-file_path = os.path.abspath(os.path.join(base_path, "..", "..", "..", "sky.txt"))
+file_path = os.path.abspath(os.path.join(base_path, "..", "..", "..", "dbky.txt"))
 with open(file_path, "r") as f:
     SECRET_KEY = f.read().strip()
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+node = platform.node()
+dev_machines = ('DESKTOP-UVMT9SV',)
+if node in dev_machines:
+    """
+    Check if the current machine is a dev machine
+    """
+    # SECURITY WARNING: don't run with debug turned on in production!
+    DEBUG = False
+    ALLOWED_HOSTS = ['*']
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'postgres',
+            'USER': 'postgres',
+            'PASSWORD': 'postgres',
+            'HOST': 'localhost',
+            'PORT': '5432',
+        }
+    }
 
-ALLOWED_HOSTS = [
-        'mrevanishere.com',
-]
+else:
+    DEBUG = True
+
+    ALLOWED_HOSTS = [
+        'mrevanishere.com', 'localhost', '127.0.0.1',
+    ]
+
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'postgres',
+            'USER': 'postgres',
+            'PASSWORD': SECRET_KEY,
+            'HOST': 'localhost',
+            'PORT': '5432',
+        }
+    }
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -22,8 +54,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #'ckeditor',
-    #'ckeditor_uploader',
+    'ckeditor',
+    'ckeditor_uploader',
     'blog.apps.BlogConfig',
 ]
 
@@ -57,21 +89,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'mrevanishere_site.wsgi.application'
 
-
-# Database
-
-# base_path_db = os.path.dirname(__file__)
-# file_path_db = os.path.abspath(os.path.join(base_path, "..", "..", "..", "dbky.txt"))
-# with open(file_path_db, "r") as f:
-    # DB_PASS = f.read().strip()
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -87,7 +104,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 
 LANGUAGE_CODE = 'en-us'
@@ -102,12 +118,11 @@ USE_TZ = True
 
 # Static and Media
 
-# CKEDITOR_UPLOAD_PATH = 'content/ckeditor'
+CKEDITOR_UPLOAD_PATH = 'content/ckeditor'
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
-
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-STATICFILES_DIRS = ( os.path.join(BASE_DIR, 'static'),)
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
