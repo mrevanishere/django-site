@@ -22,3 +22,7 @@ def article(request, id):
 
 def contact(request):
     return render(request, 'blog/contact.html')
+
+
+def login(request):
+    return render(request, 'blog/login.html')

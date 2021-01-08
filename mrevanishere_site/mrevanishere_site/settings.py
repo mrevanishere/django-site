@@ -16,7 +16,7 @@ if node in dev_machines:
     Check if the current machine is a dev machine
     """
     # SECURITY WARNING: don't run with debug turned on in production!
-    DEBUG = False
+    DEBUG = True
     ALLOWED_HOSTS = ['*']
     DATABASES = {
         'default': {
@@ -30,7 +30,7 @@ if node in dev_machines:
     }
 
 else:
-    DEBUG = True
+    DEBUG = False
 
     ALLOWED_HOSTS = [
         'mrevanishere.com', 'localhost', '127.0.0.1',
@@ -122,7 +122,11 @@ CKEDITOR_UPLOAD_PATH = 'content/ckeditor'
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
+"""
+STATIC_ROOT and MEDIA_ROOT are used in production while
+STATICFILES_DIRS is used in dev
+"""
 STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media_root')
 
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
