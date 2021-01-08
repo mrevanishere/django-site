@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <title>mrevanishere</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&family=Inter&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'staffportal/style.css' %}">
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-2">
+            <div class="sidebar">
+                <h3>mrevanishere</h3>
+                <p>
+                    STAFF PORTAL PAGE
+                </p>
+                <div class="nav">
+                    <div class="nav-social">
+                        <a href="https://www.github.com/mrevanishere/" target="_blank">Github</a>
+                    </div>
+                    <div>
+                        <ul class="nav-item">
+                            <li><a href="/" class="nav-item-link">Articles</a></li>
+                            <li><a href="/contact/" class="nav-item-link">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+        {% block content %}
+        {% endblock %}
+        <div class="col-md-4"></div>
+    </div>
+</body>
+</html>

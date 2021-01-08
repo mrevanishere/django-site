@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     'ckeditor',
     'ckeditor_uploader',
     'blog.apps.BlogConfig',
+    'staffportal.apps.StaffportalConfig',
 ]
 
 MIDDLEWARE = [
@@ -130,3 +131,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media_root')
 
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+
+# ACCOUNTS
+LOGIN_URL = 'login'
+LOGOUT_URL = 'logout'
+LOGIN_REDIRECT_URL = '/accounts/dashboard'
