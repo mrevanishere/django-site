@@ -48,6 +48,8 @@ else:
     }
 
 INSTALLED_APPS = [
+    'blog',
+    'staffportal',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -56,8 +58,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'ckeditor',
     'ckeditor_uploader',
-    'blog',
-    'staffportal',
 ]
 
 MIDDLEWARE = [

@@ -3,6 +3,7 @@ from ckeditor.fields import CKEditorWidget
 from django.contrib import admin
 from django.db import models
 from blog.models import BlogPost
+# for dev in PyCharm, must Settings > Project Structure > change project root to the django_project
 
 
 class InputForm(forms.ModelForm):
@@ -14,4 +15,4 @@ class InputForm(forms.ModelForm):
     # article = CKEditorWidget()
     class Meta:
         model = BlogPost
-        fields = ('title', 'preview', 'body', 'pub_date', 'mod_date')
+        fields = '__all__'
