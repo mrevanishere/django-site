@@ -20,15 +20,5 @@ Built with LAPP stack (Linux, Apache, PostgreSQL, Python)
 
 ## Articles
 Home / Updates
-## Portfolio
-A place to host my best or interesting projects.
-
-To be implemented
-## Resources
-A place with the best resources or references that I use for learning.
-## Search
-To be implemented
-## Patch Notes
-A place where I will be listing major changes to the site and other projects.
 ## Contact
 A list of places to find me.
