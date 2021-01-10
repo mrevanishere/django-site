@@ -1,5 +1,6 @@
 from django.http import HttpResponse, Http404
 from django.shortcuts import render, get_object_or_404
+from django.views.generic import ListView, DetailView, CreateView
 from .models import BlogPost
 
 
@@ -19,10 +20,15 @@ def article(request, id):
         raise Http404("Question does not exist")
     return render(request, 'blog/article.html', {'post': post})
 
-
 def contact(request):
     return render(request, 'blog/contact.html')
 
 
 def login(request):
     return render(request, 'blog/login.html')
+
+
+class AddPostView(CreateView):
+    model = BlogPost
+    template_name = 'staffportal/dashboard.html'
+    fields = '__all__'

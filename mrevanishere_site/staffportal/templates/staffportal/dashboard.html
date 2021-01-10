@@ -2,5 +2,20 @@
 {% block content %}
     <div class="col-md-4">
         <h1>DASHBOARD</h1>
+        {% if user.is_staff%}
+        <div class="form">
+            {% if form.errors %}
+            <p>Error</p>
+            {% endif %}
+            <form enctype="multipart/form-data" method="post"  action="">
+                {% csrf_token %}
+                <h3>Blog Post</h3>
+                {{ form.as_p }}
+                {{ form.media }}
+                <input type="submit" value="Submit Post">
+            </form>
+            <br/>
+        </div>
+        {% endif %}
     </div>
 {% endblock %}
